@@ -1,0 +1,33 @@
+spring:
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/,classpath:/META-NF/resources/,classpath:/resources/,classpath:/public/,classpath:/upload
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=GMT
+    username: root
+    password: root
+    #jackson
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+#整合mybatisplus
+mybatis-plus:
+  type-aliases-package: com.cssl.pojo
+  db-config:
+    id-type: auto
+    field-strategy: not_empty
+    column-underline: false
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    refresh: true

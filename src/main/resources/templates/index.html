@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .odd {
+            background-color: aquamarine
+        }
+    </style>
+</head>
+<body>
+<table border="1" th:width="800px">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>生日</th>
+    </tr>
+
+    <tr th:each="stu,state:${list}" th:class="${state.odd}?'odd'">
+        <td th:text="${stu.sid}">101</td>
+        <td th:text="${stu.sname}">大神</td>
+        <td th:text="${stu.borndate}">生日</td>
+    </tr>
+
+</table>
+</body>
+</html>
